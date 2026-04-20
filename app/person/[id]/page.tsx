@@ -14,11 +14,12 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
 
   if (!person) return <p>Person not found</p>;
 
-  // Function for arrow buttons (optional but nice for desktop)
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      // Scroll by 50% of the container width on desktop, 100% on mobile
+      const scrollAmount = window.innerWidth > 768 ? clientWidth * 0.5 : clientWidth;
+      const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
       scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
   };
@@ -30,15 +31,14 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
         backgroundColor: "tan",
         backgroundImage: "url('/textures/pagebackground.png')",
         backgroundRepeat: "repeat",
-        padding: "1rem", // Reduced for mobile
+        padding: "1rem",
       }}
     >
       <main style={{ maxWidth: "1200px", margin: "0 auto", color: "black" }}>
         
-        {/* NAME */}
         <h1 style={{
           textAlign: "center",
-          fontSize: "clamp(2rem, 8vw, 3.5rem)", // Responsive font size
+          fontSize: "clamp(2rem, 8vw, 3.5rem)",
           fontWeight: "bold",
           margin: "1.5rem 0",
           fontFamily: "Georgia, serif",
@@ -46,8 +46,7 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
           {person.name}
         </h1>
 
-        {/* MESSAGE BOX */}
-        <div className="message-box" style={{
+        <div style={{
           backgroundColor: "white",
           backgroundImage: "url('/textures/messagebackground.png')",
           border: "2px solid black",
@@ -65,48 +64,47 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
           ))}
         </div>
 
-        {/* MODERN CAROUSEL */}
-        <div style={{ position: "relative", maxWidth: "1000px", margin: "0 auto" }}>
+        {/* CAROUSEL CONTAINER */}
+        <div style={{ 
+          position: "relative", 
+          maxWidth: "1000px", 
+          margin: "0 auto",
+          backgroundColor: "white",
+          backgroundImage: "url('/textures/messagebackground.png')",
+          border: "2px solid black",
+          borderRadius: "8px",
+          padding: "1rem",
+          boxShadow: "4px 4px 0 rgba(0,0,0,0.3)",
+        }}>
           
-          {/* Desktop Arrows (Hidden on small screens via CSS later) */}
-          <div className="carousel-nav" style={{
-            display: "flex", 
-            justifyContent: "space-between", 
-            position: "absolute", 
-            top: "50%", 
-            width: "100%", 
-            zIndex: 10,
-            pointerEvents: "none"
-          }}>
-            <button onClick={() => scroll("left")} style={{ pointerEvents: "auto", background: "white", border: "2px solid black", borderRadius: "50%", width: "40px", height: "40px", cursor: "pointer", marginLeft: "-20px" }}>←</button>
-            <button onClick={() => scroll("right")} style={{ pointerEvents: "auto", background: "white", border: "2px solid black", borderRadius: "50%", width: "40px", height: "40px", cursor: "pointer", marginRight: "-20px" }}>→</button>
-          </div>
+          {/* NAV BUTTONS - Hidden on Mobile via CSS below */}
+          <button className="nav-btn left" onClick={() => scroll("left")}>←</button>
+          <button className="nav-btn right" onClick={() => scroll("right")}>→</button>
 
           <div 
             ref={scrollRef}
-            className="carousel-viewport" // Uses the CSS we added to globals.css
+            className="carousel-viewport"
             style={{
               display: "flex",
               overflowX: "auto",
               scrollSnapType: "x mandatory",
               gap: "1rem",
-              padding: "1rem 0",
-              scrollbarWidth: "none", // Firefox
+              scrollbarWidth: "none",
+              padding: "0.5rem"
             }}
           >
             {person.images.map((img: string, index: number) => (
               <div
                 key={index}
-                className="carousel-item" // Handled by our globals.css media queries
+                className="carousel-item"
                 style={{
-                  flex: "0 0 100%", // Mobile default
+                  flex: "0 0 100%", // Mobile: 1 image
                   scrollSnapAlign: "center",
                   position: "relative",
-                  height: "400px",
-                  backgroundColor: "rgba(0,0,0,0.03)",
-                  borderRadius: "12px",
+                  height: "360px", // Fixed height to prevent "jumping"
+                  backgroundColor: "rgba(0,0,0,0.05)",
+                  borderRadius: "8px",
                   overflow: "hidden",
-                  border: "1px solid rgba(0,0,0,0.1)"
                 }}
               >
                 <Image
@@ -121,7 +119,6 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
           </div>
         </div>
 
-        {/* VIDEO (More responsive width) */}
         {person.video && (
           <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
             <video controls style={{ width: "100%", maxWidth: "600px", borderRadius: "12px", border: "2px solid black" }}>
@@ -130,7 +127,6 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
           </div>
         )}
 
-        {/* BACK BUTTON */}
         <div style={{ textAlign: "center", paddingBottom: "4rem" }}>
           <Link href="/">
             <button style={{ 
@@ -148,14 +144,36 @@ export default function PersonPage({ params }: { params: Promise<{ id: string }>
         </div>
       </main>
 
-      {/* Inline style for the 2-image desktop rule */}
       <style jsx>{`
+        .carousel-viewport::-webkit-scrollbar { display: none; }
+        
+        .nav-btn {
+          display: none; /* Hide on mobile */
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: white;
+          border: 2px solid black;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          z-index: 10;
+          font-weight: bold;
+          box-shadow: 2px 2px 0 black;
+        }
+
+        .nav-btn:active { transform: translateY(-48%); boxShadow: 1px 1px 0 black; }
+
         @media (min-width: 768px) {
+          .nav-btn { display: block; }
+          .left { left: -20px; }
+          .right { right: -20px; }
+          
           .carousel-item {
-            flex: 0 0 calc(50% - 0.5rem) !important;
+            flex: 0 0 calc(50% - 0.5rem) !important; /* Web: 2 images */
           }
         }
-        .carousel-viewport::-webkit-scrollbar { display: none; }
       `}</style>
     </div>
   );
