@@ -12,62 +12,77 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif; /* Matching your page design */
 }
 
-/* Home: varied-size photo grid collage — square cells so column span vs row span = true aspect ratio */
+/* --- The Collage Board --- */
 .home-collage-board {
   container-type: inline-size;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5rem 0 3rem;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  /* Square cells: row height ≈ column width (portrait tiles = more rows than cols) */
-  grid-auto-rows: clamp(36px, 8.2vw, 96px);
-  grid-auto-rows: 8.33cqw;
-  grid-auto-flow: dense;
-  gap: 10px;
-}
-
-@media (min-width: 640px) {
-  .home-collage-board {
-    gap: 12px;
-  }
+  
+  /* MOBILE DEFAULT: Single column vertical stack */
+  grid-template-columns: 1fr; 
+  gap: 20px;
 }
 
 .home-collage-tile {
   display: block;
-  min-width: 0;
-  min-height: 0;
   position: relative;
   text-decoration: none;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  
+  /* MOBILE DEFAULT: A nice rectangular shape for the single column */
+  aspect-ratio: 4 / 3; 
 }
 
+/* DESKTOP/TABLET: Screens wider than 768px */
+@media (min-width: 768px) {
+  .home-collage-board {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 8.33cqw;
+    grid-auto-flow: dense;
+    gap: 10px;
+    padding: 0.5rem 0 3rem;
+  }
+
+  .home-collage-tile {
+    /* Auto allows the grid spans in page.tsx to determine size */
+    aspect-ratio: auto; 
+  }
+}
+
+/* Hover Effects (apply to all screen sizes) */
 .home-collage-tile:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   z-index: 2;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 
-.home-collage-tile:focus-visible {
-  outline: 3px solid #333;
-  outline-offset: 3px;
+/* --- Carousel Adjustment (If applicable on person pages) --- */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* 1 image at a time on mobile */
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 50%; /* 2 images at a time on desktop */
+  }
 }
