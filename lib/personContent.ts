@@ -215,12 +215,7 @@ P.S. They sent to me: "I’m hoping the pics were sent. Long story short! She’
 
   grandma: {
     name: "Grandma",
-    note: `Dear Caroline,
-
-Paste your message here when you have it.
-
-With love,
-Grandma`,
+    note: `Personal note coming from Grandma! (Maybe she has already sent it)`,
     images: [
       "/images/grandama7.jpeg",
       "/images/grandama1.jpeg",
@@ -290,25 +285,25 @@ Mom`,
     images: ["/images/elianna1.jpeg", "/images/elianna2.jpeg", "/images/elianna3.jpeg", "/images/elianna4.jpeg", "/images/elianna5.jpeg"],
   },
 
-  friend13: {
-    name: "Friend 13",
-    note: `Dear Caroline,
+  dad: {
+    name: "Dad",
+    note: `Dear (Sweet) Caroline – where do I start. What a journey it has been to get you to this point in your life. When I look back at the years at all you have accomplished and the times that I got to be a part of it is hard to choose the moments that I most cherish being a part of but here are some of the ones that stand out. The smile on your face when you realize you have won the 50 Free States (I have the newspaper on my desk at work and see it every day). The skinny Rob Lowe and why did you have to be salty videos. Your reaction when you saw Bexie for the first time. In 8th Grade when you ran over the girl from New Albany in the lacrosse game because she had set an illegal pick on you. She had to be helped off the field. The pink swim robe. Poop in the hair on the carriage ride to see Santa. You deciding to play soccer in your 8th grade year and me being asked by another parent what happened, the field hockey team just lost their best player. The trips to zones and the trip to Naples (Flags Up and quick-thinking Danny). Double thumbs up before a race. The way you managed your recruitment and people’s disappointment when you told them that you were not choosing them (especially the Navy Coach). It seems like just yesterday that we were sitting in the car outside of Maulding and you were crying about how hard it was and now you are about to graduate with Highest Honors.
 
-Paste your message here when you have it.
+Most of all I am amazed at how you just go about your life with the same energy and confidence that you always have. You know who you are and the people that you want to surround yourself with. You have standards and you do not lower them to just fit in or to make someone else happy. You have always just figured it out and used your resources to the best of your ability. Everyone you have encountered is better off having met you. You have gotten where you are because of knowing who you are and never losing sight of what and who really matters most to you. I cannot tell you how proud I am of you for what you have been able to do over the last (4) years and how excited I am to see what comes next for you.
 
-With love,
-Friend 13`,
-    images: placeholderImages,
+I Love You, Dad.`,
+    images: ["/images/dad1.jpeg", "/images/dad2.jpeg", "/images/dad3.jpeg", "/images/dad4.jpeg", "/images/dad5.jpeg", "/images/dad6.jpeg", "/images/dad7.jpeg", "/images/dad8.jpeg", "/images/dad9.jpeg", "/images/dad10.jpeg", "/images/dad11.jpeg", "/images/dad12.jpeg", "/images/dad13.jpeg", "/images/dad14.jpeg", "/images/dad15.jpeg", "/images/dad16.jpeg", "/images/dad17.jpeg", "/images/dad18.jpeg", "/images/dad19.jpeg", "/images/dad20.jpeg", "/images/dad21.jpeg", "/images/dad22.jpeg", "/images/dad23.jpeg", "/images/dad24.jpeg", "/images/dad25.jpeg", "/images/dad26.jpeg", "/images/dad27.jpeg", "/images/dad28.jpeg", "/images/dad29.jpeg", "/images/dad30.jpeg", "/images/dad31.jpeg", "/images/dad32.jpeg", "/images/dad33.jpeg", "/images/dad34.jpeg"],
   },
 
-  friend14: {
-    name: "Friend 14",
-    note: `Dear Caroline,
+  deniz: {
+    name: "Deniz",
+    note: `Hi b!!! I can’t even believe that I am writing this and we are in this phase of our lives. First of all, I am soooo proud of you. The woman you’ve become, the person you are, an athlete you are… I can’t wait to see killing post grad life. I want to take you to the beginning of our friendship. 
 
-Paste your message here when you have it.
+The minute I stepped into the US, you have always been by my side through ups and downs. Even though, we were not rooming together. There was something that I felt so close to you. Like I knew you from my past life or smt. I am always going to cherish our moments and memories. I don’t even know where to begin. Our crazy party past, just non stop laughing between us, and most importantly I can just talk to you without feeling any judgments. It’s like being in flow state. I am so glad  to have a friend like you and call you my best friend.The distance between us makes our friendship so worthy. It has never changed and won’t change in the future. Please invite me to your wedding ( Avery I know you’re gonna read this so don’t forget my invitation and take good care of my girl). And now I am sitting in my supply chain class tearing up. 
 
-With love,
-Friend 14`,
+I love you so much
+
+Deniz`,
     images: placeholderImages,
   },
 
@@ -424,7 +419,8 @@ Friend 24`,
 };
 
 export const homePeople: { id: string; name: string; image: string }[] = [
-  { id: "avery", name: "Avery", image: "/images/averymain.jpeg" },
+  { id: "dad", name: "Dad", image: "/images/dadmain.jpeg" },
+  { id: "mom", name: "Mom", image: "/images/mommain.jpeg" },
   { id: "ari", name: "Ari", image: "/images/arimain.JPG" },
   { id: "emma", name: "Emma", image: "/images/emmamain.jpeg" },
   { id: "jillian", name: "Jillian", image: "/images/jillianmain.jpeg" },
@@ -433,12 +429,10 @@ export const homePeople: { id: string; name: string; image: string }[] = [
   { id: "nana", name: "Nana and Gdaddy", image: "/images/nanamain.jpeg" },
   { id: "kendal", name: "Kendal", image: "/images/kendalmain.jpeg" },
   { id: "grandma", name: "Grandma", image: "/images/grandamamain.jpeg" },
-  { id: "mom", name: "Mom", image: "/images/mommain.jpeg" },
   { id: "carmen", name: "Carmen", image: "/images/carmenmain.jpeg" },
   { id: "bahar", name: "Bahar", image: "/images/baharmain.jpeg" },
   { id: "elianna", name: "Elianna", image: "/images/eliannamain.jpeg" },
-  { id: "friend13", name: "Friend 13", image: "/images/placeholder.png" },
-  { id: "friend14", name: "Friend 14", image: "/images/placeholder.png" },
+  { id: "deniz", name: "Deniz", image: "/images/placeholder.png" },
   { id: "friend15", name: "Friend 15", image: "/images/placeholder.png" },
   { id: "friend16", name: "Friend 16", image: "/images/placeholder.png" },
   { id: "friend17", name: "Friend 17", image: "/images/placeholder.png" },
@@ -449,4 +443,5 @@ export const homePeople: { id: string; name: string; image: string }[] = [
   { id: "friend22", name: "Friend 22", image: "/images/placeholder.png" },
   { id: "friend23", name: "Friend 23", image: "/images/placeholder.png" },
   { id: "friend24", name: "Friend 24", image: "/images/placeholder.png" },
+  { id: "avery", name: "Avery", image: "/images/averymain.jpeg" },
 ];
