@@ -57,7 +57,7 @@ export default function Home() {
           Congratulations! <br/> GT Class of 2026 🎓
         </h1>
         <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", marginTop: "1rem" }}>
-          We are all so proud of you. Here are some of the people who are cheering you on.
+          We are all so proud of you! Here are some of the people who have been cheering you on.
         </p>
       </header>
 
