@@ -307,15 +307,15 @@ Deniz`,
     images: placeholderImages,
   },
 
-  friend15: {
-    name: "Friend 15",
-    note: `Dear Caroline,
-
-Paste your message here when you have it.
-
-With love,
-Friend 15`,
-    images: placeholderImages,
+  astrid: {
+    name: "Astrid",
+    note: `Happy graduation! Proud of you and what you’ve accomplished at GT. I’m grateful that swimming brought us together. It was fun getting to be your teammate for those years, and I’ll appreciate the memories, the grind, and other moments along the way. 
+    
+    As you head into this next chapter, I just wanted to say to trust yourself and everything you’ve built so far. Be open to new opportunities, take some risks (something I definitely need to work on too lol), and try to actually enjoy things along the way.  
+    
+    I’ve really come to appreciate something my dad always says which is life is a marathon, not a sprint—there’s no need to rush through it. Congrats again, and can’t wait to see what’s next for you :) `,
+    images: ["/images/astrid1.jpeg", "/images/astrid2.jpeg"],
+    video: "/videos/astrid.mov",
   },
 
   friend16: {
@@ -433,9 +433,9 @@ export const homePeople: { id: string; name: string; image: string }[] = [
   { id: "bahar", name: "Bahar", image: "/images/baharmain.jpeg" },
   { id: "elianna", name: "Elianna", image: "/images/eliannamain.jpeg" },
   { id: "deniz", name: "Deniz", image: "/images/placeholder.png" },
-  { id: "friend15", name: "Friend 15", image: "/images/placeholder.png" },
   { id: "friend16", name: "Friend 16", image: "/images/placeholder.png" },
   { id: "friend17", name: "Friend 17", image: "/images/placeholder.png" },
+  { id: "astrid", name: "Astrid", image: "/images/astridmain.jpeg" },
   { id: "friend18", name: "Friend 18", image: "/images/placeholder.png" },
   { id: "friend19", name: "Friend 19", image: "/images/placeholder.png" },
   { id: "friend20", name: "Friend 20", image: "/images/placeholder.png" },
