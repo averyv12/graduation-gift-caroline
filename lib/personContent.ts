@@ -318,26 +318,26 @@ Deniz`,
     video: "/videos/astrid.mov",
   },
 
-  friend16: {
-    name: "Friend 16",
-    note: `Dear Caroline,
+  anne: {
+    name: "Anne",
+    note: `I don’t even know where to begin, other than we have seen it all together and we are finally getting out! You have meant the absolute world to me since I committed to GT over 5 years ago, now (CRAZY!). It’s been an honor to see you grow and blossom into this beautiful, intelligent, kind, and fun woman I get to keep with me forever. You have helped me on my lowest days and always brought a smile to my face, even when I thought it was impossible. I truly wouldn't have gotten here without you. Your spontaneity and love for life brought me out of my shell. From freshman year, driving home from AA, and you sqwaking at the random kids walking by, to sneaking behind the bar at the frats and becoming a bartender at Beta this year. Your true, authentic personality is a gift and blessing to everyone around you, so you better not forget or hide it bitch. I love you to the moon and beyond, Ceeps, and you better say it back!!! I am so grateful for you and for being your roomie from day 1.
 
-Paste your message here when you have it.
-
-With love,
-Friend 16`,
-    images: placeholderImages,
+Love,
+Bananne, 2x Secret Psychee, (OG) Rat, Meepers, and House/Maulding Pharmacist`,
+    images: ["/images/anne1.jpeg", "/images/anne2.jpeg", "/images/anne3.jpeg", "/images/anne4.jpeg", "/images/anne5.jpeg", "/images/anne6.jpeg", "/images/anne7.jpeg", "/images/anne8.jpeg", "/images/anne9.jpeg"],
+    video: "/videos/anne.mov",
   },
 
-  friend17: {
-    name: "Friend 17",
-    note: `Dear Caroline,
+  caroline: {
+    name: "Caroline",
+    note: `CP!!! PORTERFIELD! 
+  
+Wow, I can’t believe you are graduating from college now. It is actually insane to think about how we have been friends with each other since kindergarten/early elementary school. I have loved growing up with you. It has been such a privilege to grow up and have a constant best friend like you. You truly light up the room! You always know how to make everyone laugh and make their days so much better. I could be having the worst day in the world and when I see you, it flips around the whole day. You are sunshine in human form. Truly a breath of fresh air, there is no one like Caroline Porterfield! You will bring this energy, your insane persistence, and dedication to anything you choose to do. Any company would be so incredibly lucky to have a CP. There are so many funny memories I have of us like the earliest one being us arguing in kindergarten because we are both named Caroline (and god forbid another one exist, yet alone in the same classroom), competition with each other for Mrs. Wildman’s Native American book project (like genuinely wtf was that so dumb), going through swim together and giving Todd Saltus/Barb the hardest time ever because when we were together we would not STFU, always having you by my side through friend groups issues in middle/high school, being my biggest cheerleader with swim, being there for me through my lowest moments in high school, finding each other again for breaks in college, and always snatching our ice cream from the fridge when our garage is open (sorry its always closed now, but it's definitely not because of you hahaha). Thank you so much for always being a good friend and putting up with me. I am so incredibly lucky to have you in my life. I’m so excited for your next adventure! You are truly the best person anyone could ask for. Always cheering you on even if it’s 1,000+ miles away. 
 
-Paste your message here when you have it.
-
-With love,
-Friend 17`,
-    images: placeholderImages,
+I love you so SO much!
+CUBERT`,
+    images: ["/images/caroline1.jpeg", "/images/carolinemain.jpeg"],
+    video: "/videos/caroline.mov",
   },
 
   friend18: {
@@ -349,6 +349,7 @@ Paste your message here when you have it.
 With love,
 Friend 18`,
     images: placeholderImages,
+   
   },
 
   friend19: {
@@ -433,11 +434,11 @@ export const homePeople: { id: string; name: string; image: string }[] = [
   { id: "bahar", name: "Bahar", image: "/images/baharmain.jpeg" },
   { id: "elianna", name: "Elianna", image: "/images/eliannamain.jpeg" },
   { id: "deniz", name: "Deniz", image: "/images/placeholder.png" },
+  { id: "astrid", name: "Astrid", image: "/images/astridmain.jpeg" },
+  { id: "anne", name: "Anne", image: "/images/annemain.jpeg" },
+  { id: "caroline", name: "Caroline", image: "/images/carolinemain.jpeg" },
   { id: "friend16", name: "Friend 16", image: "/images/placeholder.png" },
   { id: "friend17", name: "Friend 17", image: "/images/placeholder.png" },
-  { id: "astrid", name: "Astrid", image: "/images/astridmain.jpeg" },
-  { id: "friend18", name: "Friend 18", image: "/images/placeholder.png" },
-  { id: "friend19", name: "Friend 19", image: "/images/placeholder.png" },
   { id: "friend20", name: "Friend 20", image: "/images/placeholder.png" },
   { id: "friend21", name: "Friend 21", image: "/images/placeholder.png" },
   { id: "friend22", name: "Friend 22", image: "/images/placeholder.png" },
