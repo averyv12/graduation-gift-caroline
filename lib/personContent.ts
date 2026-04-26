@@ -52,6 +52,7 @@ Avery`,
       "/images/avery20.jpeg",
       "/images/avery21.jpeg",
     ],
+    video: "/videos/avery.mov",
   },
 
   ari: {
