@@ -305,7 +305,7 @@ The minute I stepped into the US, you have always been by my side through ups an
 I love you so much
 
 Deniz`,
-    images: placeholderImages,
+    images: ["/images/deniz1.jpeg", "/images/deniz2.jpeg", "/images/deniz3.jpeg", "/images/deniz4.jpeg", "/images/deniz5.jpeg", "/images/deniz6.jpeg"],
   },
 
   astrid: {
@@ -434,7 +434,7 @@ export const homePeople: { id: string; name: string; image: string }[] = [
   { id: "carmen", name: "Carmen", image: "/images/carmenmain.jpeg" },
   { id: "bahar", name: "Bahar", image: "/images/baharmain.jpeg" },
   { id: "elianna", name: "Elianna", image: "/images/eliannamain.jpeg" },
-  { id: "deniz", name: "Deniz", image: "/images/placeholder.png" },
+  { id: "deniz", name: "Deniz", image: "/images/denizmain.jpeg" },
   { id: "friend16", name: "Friend 16", image: "/images/placeholder.png" },
   { id: "friend17", name: "Friend 17", image: "/images/placeholder.png" },
   { id: "astrid", name: "Astrid", image: "/images/astridmain.jpeg" },
